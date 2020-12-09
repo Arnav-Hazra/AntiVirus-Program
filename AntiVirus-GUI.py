@@ -30,42 +30,22 @@ if "win" in os_name:
         os.makedirs("AntiVirus\\Quarantine\\")
     if not os.path.exists("AntiVirus\\sf\\"):
         os.makedirs("AntiVirus\\sf\\")
-    if not os.path.exists("AntiVirus\\Large_Update_File\\"):
-        os.makedirs("AntiVirus\\Large_Update_File")
     quarantine_folder = "AntiVirus\\Quarantine\\*"
     file_to_quarantine = "AntiVirus\\Quarantine\\"
     partitionen_folder = "AntiVirus\\sf\\sf.txt"
-    links_current = "AntiVirus\\Large_Update_File\\links_current.txt"
-    links_downloaded = "AntiVirus\\Large_Update_File\\links_downloaded.txt"
-    large_signatures = "AntiVirus\\Large_Update_File\\signatures.txt"
+    large_signatures = "signatures.txt"
     f = open(partitionen_folder, "a")
-    f.close()
-    f = open(links_current, "a")
-    f.close()
-    f = open(links_downloaded, "a")
-    f.close()
-    f = open(large_signatures, "a")
     f.close()
 else:
     if not os.path.exists("AntiVirus//Quarantine//"):
         os.makedirs("AntiVirus//Quarantine//")
     if not os.path.exists("AntiVirus//sf//"):
         os.makedirs("AntiVirus//sf//")
-    if not os.path.exists("AntiVirus//Large_Update_File//"):
-        os.makedirs("AntiVirus//Large_Update_File//")
     quarantine_folder = "AntiVirus//Quarantine//*"
     file_to_quarantine = "AntiVirus//Quarantine//"
     partitionen_folder = "AntiVirus//sf//sf.txt"
-    links_current = "AntiVirus//Large_Update_File//links_current.txt"
-    links_downloaded = "AntiVirus//Large_Update_File//links_downloaded.txt"
-    large_signatures = "AntiVirus//arge_Update_File//signatures.txt"
+    large_signatures = "signatures.txt"
     f = open(partitionen_folder, "a")
-    f.close()
-    f = open(links_current, "a")
-    f.close()
-    f = open(links_downloaded, "a")
-    f.close()
-    f = open(large_signatures, "a")
     f.close()
 
 files_len = counter = 0
