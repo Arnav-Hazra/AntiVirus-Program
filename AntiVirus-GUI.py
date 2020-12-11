@@ -19,7 +19,7 @@ import quarantaene
 import SystemFileScanner
 
 os_name = sys.platform
-verzeichnisse = []
+directori = []
 files = []
 partitionen = []
 terminations = []
@@ -136,7 +136,7 @@ def ScanSystemFiles():
     text_box.update()
     
 def full_scan(part):
-    global verzeichnisse
+    global directori
     global files
     global text_box
     global e
@@ -702,4 +702,4 @@ t_main.start()
 time.sleep(1)
 t_clock.start()
 time.sleep(5)
-t_files.start()
+#t_files.start()

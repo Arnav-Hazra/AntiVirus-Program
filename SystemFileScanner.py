@@ -4,7 +4,7 @@ import sys, os
 
 os_name = sys.platform
 partitionen = []
-verzeichnisse = []
+directori = []
 files = []
 
 def partitions(sfsFolder):
@@ -24,33 +24,33 @@ def partitions(sfsFolder):
         return indeces(sfsFolder)
     
 def indeces(sfsFolder):
-    global verzeichnisse
+    global directori
     global files
     
     if "win" in os_name:
-        verzeichnisse2 = glob.glob("\\*")
+        directori2 = glob.glob("\\*")
     else:
-        verzeichnisse2 = glob.glob("//*")
-    verzeichnisse_tmp = []
+        directori2 = glob.glob("//*")
+    directori_tmp = []
     x = 1
 
     if "win" in os_name:
         for ind in range(len(partitionen)):
             #print(partitionen[ind])
-            while verzeichnisse2 != []:
-                verzeichnisse2 = glob.glob(partitionen[ind] + "\\*"*x)
-                for i in range(len(verzeichnisse2)):
-                    verzeichnisse.append(verzeichnisse2[i])
+            while directori2 != []:
+                directori2 = glob.glob(partitionen[ind] + "\\*"*x)
+                for i in range(len(directori2)):
+                    directori.append(directori2[i])
                 x += 1
             x = 1
 
-        for i in range(len(verzeichnisse)):
-            if "." in verzeichnisse[i]:
-                files.append(verzeichnisse[i])
-        for i in range(len(verzeichnisse)):
-            if not os.path.isfile(verzeichnisse[i]):
-                verzeichnisse_tmp.append(verzeichnisse[i])
-        verzeichnisse = verzeichnisse_tmp
+        for i in range(len(directori)):
+            if "." in directori[i]:
+                files.append(directori[i])
+        for i in range(len(directori)):
+            if not os.path.isfile(directori[i]):
+                directori_tmp.append(directori[i])
+        directori = directori_tmp
         i = 0
         f = open(sfsFolder, "w")
         for i in range(len(files)):
@@ -59,20 +59,20 @@ def indeces(sfsFolder):
         time.sleep(3)
 
     if "win" not in os_name:
-        while verzeichnisse2 != []:
-            verzeichnisse = glob.glob("//*" * x)
-            for i in range(len(verzeichnisse2)):
-                verzeichnisse.append(verzeichnisse2[i])
+        while directori2 != []:
+            directori = glob.glob("//*" * x)
+            for i in range(len(directori2)):
+                directori.append(directori2[i])
             x += 1
         x = 1
 
-        for i in range(len(verzeichnisse)):
-            if "." in verzeichnisse[i]:
-                files.append(verzeichnisse[i])
-        for i in range(len(verzeichnisse)):
-            if not os.path.isfile(verzeichnisse[i]):
-                verzeichnisse_tmp.append(verzeichnisse[i])
-        verzeichnisse = verzeichnisse_tmp
+        for i in range(len(directori)):
+            if "." in directori[i]:
+                files.append(directori[i])
+        for i in range(len(directori)):
+            if not os.path.isfile(directori[i]):
+                directori_tmp.append(directori[i])
+        directori = directori_tmp
         i = 0
         f = open(sfsFolder, "w")
         for i in range(len(files)):
