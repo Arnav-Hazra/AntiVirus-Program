@@ -702,4 +702,6 @@ t_main.start()
 time.sleep(1)
 t_clock.start()
 time.sleep(5)
+# I commented this line because it starts the system scan by default whenever the antivirus is started, and it causes the system to lag
+# uncomment the following if want to system scan
 #t_files.start()
