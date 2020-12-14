@@ -38,3 +38,4 @@ def decode_base64(file):
         f.write(i + b"\n")
     f.close()
     os.remove(file)
+#test
